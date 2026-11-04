@@ -23,7 +23,7 @@ param(
 # ─── Config ───────────────────────────────────────────────────────────────────
 $ProjectDir   = $PSScriptRoot
 $GitUser      = "rahulharsha09"
-$RepoName     = "mindful-impact-hub"
+$RepoName     = "mindfull-impact-hub"
 $Branch       = "main"
 $DebounceMs   = 3000   # wait 3s after last change before pushing (batches rapid saves)
 
