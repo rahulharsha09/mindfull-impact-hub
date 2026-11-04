@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Google Font loaded via layout.tsx ───────────────────────────────────────*/
+
 @layer base {
   *,
   *::before,
@@ -14,41 +16,45 @@
   }
 
   body {
-    @apply text-gray-900 bg-white;
+    @apply bg-white text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
-  /* Accessible focus styles */
+  /* Accessible focus ring */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-brand-500 rounded;
+    outline: 2px solid #22c55e;
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
 @layer utilities {
+  /* Force-include brand colours so Tailwind JIT doesn't purge them */
+  .text-brand-500  { color: #22c55e; }
+  .text-brand-600  { color: #16a34a; }
+  .text-brand-700  { color: #15803d; }
+  .bg-brand-50     { background-color: #f0fdf4; }
+  .bg-brand-100    { background-color: #dcfce7; }
+  .bg-brand-200    { background-color: #bbf7d0; }
+  .bg-brand-500    { background-color: #22c55e; }
+  .bg-brand-600    { background-color: #16a34a; }
+  .border-brand-200 { border-color: #bbf7d0; }
+  .border-brand-500 { border-color: #22c55e; }
+  .focus\:ring-brand-400:focus { --tw-ring-color: #4ade80; }
+  .focus-visible\:ring-brand-500:focus-visible { --tw-ring-color: #22c55e; }
+
+  /* Multi-line clamp */
   .line-clamp-2 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
-
-  /* Smooth colour transitions across the entire UI when mode toggles */
-  .transition-theme {
-    @apply transition-colors duration-500;
-  }
 }
 
-/* Custom scrollbar — subtle */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 rounded-full;
-}
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400;
-}
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
