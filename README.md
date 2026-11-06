@@ -15,21 +15,6 @@ A production-ready, mental-health-aware single-page dashboard built with **Next.
 | 🌍 **Volunteer Match Engine** | Searchable, filterable card grid of 15 real volunteer categories with postal code search and a full match confirmation modal |
 | 💚 **Charity Finder** | Sortable table of 10 vetted charities with trust scores, program delivery bars, and a live Impact Multiplier Calculator |
 
----
-
-## 🚀 Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
 
 ## 📁 Project Structure
 
